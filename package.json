@@ -19,9 +19,6 @@
   "dependencies": {
     "sass": "^1.79.1"
   },
-  "files": [
-    "dist"
-  ],
   "exports": {
     "./styles/*": "./dist/assets/styles/*",
     "./svg/*": "./dist/svg/*"
