@@ -20,9 +20,5 @@
   },
   "files": [
     "dist"
-  ],
-  "exports": {
-    "./styles/*": "./dist/assets/styles/*",
-    "./svg/*": "./dist/svg/*"
-  }
+  ]
 }
