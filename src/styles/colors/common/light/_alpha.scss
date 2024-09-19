@@ -1,0 +1,49 @@
+// Light Theme Alpha color variables used in Legacy and Ember
+
+@mixin light-theme-common-alpha-colors {
+	--color-fill-neutral-bold-0-3: #{rgba($E900, 0.3)};
+	--color-fill-neutral-bold-0-5: #{rgba($E900, 0.5)};
+
+	--color-fill-semantic-warning-mildest-0-6: #{rgba($C50, 0.6)};
+
+	--color-fill-surface-0-2: #{rgba($Milk, 0.2)};
+	--color-fill-surface-0-4: #{rgba($Milk, 0.4)};
+	--color-fill-surface-0-5: #{rgba($Milk, 0.5)};
+	--color-fill-surface-0-7: #{rgba($Milk, 0.7)};
+	--color-fill-surface-0-8: #{rgba($Milk, 0.8)};
+
+	--color-scrim-0-5: #{rgba($E900, 0.5)};
+
+	--color-shadow-0-01: #{rgba($E900, 0.01)};
+	--color-shadow-0-03: #{rgba($E900, 0.03)};
+	--color-shadow-0-04: #{rgba($E900, 0.04)};
+	--color-shadow-0-05: #{rgba($E900, 0.05)};
+	--color-shadow-0-06: #{rgba($E900, 0.06)};
+	--color-shadow-0-07: #{rgba($E900, 0.07)};
+	--color-shadow-0-08: #{rgba($E900, 0.08)};
+	--color-shadow-0-09: #{rgba($E900, 0.09)};
+	--color-shadow-0-1: #{rgba($E900, 0.1)};
+	--color-shadow-0-12: #{rgba($E900, 0.12)};
+	--color-shadow-0-13: #{rgba($E900, 0.13)};
+	--color-shadow-0-14: #{rgba($E900, 0.14)};
+	--color-shadow-0-15: #{rgba($E900, 0.15)};
+	--color-shadow-0-16: #{rgba($E900, 0.16)};
+	--color-shadow-0-18: #{rgba($E900, 0.18)};
+	--color-shadow-0-19: #{rgba($E900, 0.19)};
+	--color-shadow-0-2: #{rgba($E900, 0.2)};
+	--color-shadow-0-21: #{rgba($E900, 0.21)};
+	--color-shadow-0-22: #{rgba($E900, 0.22)};
+	--color-shadow-0-24: #{rgba($E900, 0.24)};
+	--color-shadow-0-25: #{rgba($E900, 0.25)};
+	--color-shadow-0-26: #{rgba($E900, 0.26)};
+	--color-shadow-0-3: #{rgba($E900, 0.3)};
+	--color-shadow-0-34: #{rgba($E900, 0.34)};
+	--color-shadow-0-36: #{rgba($E900, 0.36)};
+	--color-shadow-0-55: #{rgba($E900, 0.55)};
+	--color-shadow-0-64: #{rgba($E900, 0.64)};
+	--color-shadow-0-66: #{rgba($E900, 0.66)};
+
+	--color-text-inverse-0-75: #{rgba($Milk, 0.75)};
+
+	--color-text-primary-0-5: #{rgba($S900, 0.5)};
+}

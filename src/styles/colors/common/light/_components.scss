@@ -1,0 +1,57 @@
+// Light Theme Base Components variables used in Legacy and Ember
+
+@mixin light-theme-common-components-colors {
+	// Layout Colors
+	--layout-header-background: var(--color-fill-surface);
+	--layout-control-bar-background: var(--color-fill-surface);
+	--layout-container-background: var(--color-fill-surface);
+	--layout-sidebar-background: var(--color-fill-container);
+	--layout-side-nav-bar-background: var(--color-fill-container);
+	--layout-sidebar-neutral-background: var(--color-fill-container);
+	--layout-navbar-background: var(--color-fill-neutral-bold);
+
+	// Full Calendar Customization
+	// TODO: Remove styles overriding and handle the customisation by changing
+	// the Full calendar variables - https://github.com/fullcalendar/fullcalendar/blob/main/packages/core/src/styles/vars.css
+	// https://github.com/fullcalendar/fullcalendar/blob/main/packages/daygrid/src/styles/vars.css
+	// https://github.com/fullcalendar/fullcalendar/blob/main/packages/list/src/styles/vars.css
+	--fc-border-color: var(--color-boundary-border-mildest);
+
+	// TODO: Move btn variables scope to .btn or button and type
+	// Rename these according to the new Naming convention
+	--color-btn-fill: var(--color-fill-surface);
+	--color-btn-boundary: var(--color-boundary-border-mildest);
+	--color-btn-text: var(--color-text-primary);
+	--color-btn-icon: var(--color-icon-primary);
+
+	--color-btn-hover-fill: var(--color-overlay-base-container);
+	--color-btn-hover-icon: var(--color-text-primary);
+	--color-btn-focus-boundary: var(--color-boundary-brand);
+
+	--color-btn-disabled-text: var(--color-text-disabled);
+	--color-btn-disabled-fill: var(--color-fill-base);
+
+	--color-btn-special-active-text: var(--color-text-inverse-0-75);
+
+	--color-btn-primary-fill: var(--color-fill-neutral);
+	--color-btn-primary-text: var(--color-text-inverse);
+	--color-btn-primary-boundary: var(--color-fill-neutral-bold);
+
+	--color-btn-primary-hover-fill: var(--color-fill-neutral-bold);
+	--color-btn-primary-active-boundary: var(--color-boundary-semantic-info-mild);
+	--color-btn-primary-disabled-fill: var(--color-fill-neutral);
+
+	--color-btn-danger-fill: var(--color-fill-semantic-error-bold);
+	--color-btn-danger-text: var(--color-text-inverse);
+	--color-btn-danger-boundary: var(--color-fill-semantic-error-bolder);
+
+	--color-btn-danger-hover-fill: var(--color-fill-semantic-error-bolder);
+	--color-btn-danger-active-boundary: var(--color-boundary-semantic-error-mild);
+
+	--color-btn-link-text: var(--color-text-brand);
+	--color-btn-link-icon: var(--color-text-brand);
+
+	// Modal Colors
+	--modal-background: var(--color-fill-surface);
+	--modal-footer-background: var(--color-fill-container);
+}

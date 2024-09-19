@@ -1,0 +1,43 @@
+.btn-primary {
+  background: var(--color-btn-primary-fill);
+  color: var(--color-btn-primary-text) !important;
+  font-weight: 600;
+  border: 1px solid var(--color-btn-primary-boundary);
+  box-shadow: 0 1px 0 0 var(--color-shadow-0-05);
+
+  &:hover {
+    color: var(--color-btn-primary-text);
+    background: var(--color-btn-primary-hover-fill);
+    border-color: var(--color-btn-primary-boundary) !important;
+  }
+
+  &:focus {
+    outline: none;
+    color: var(--color-btn-primary-text);
+    background: var(--color-btn-primary-fill);
+    border-color: var(--color-btn-primary-fill);
+    box-shadow: 0 0 0 1px var(--color-btn-focus-boundary);
+  }
+
+  &:active,
+  &.active {
+    color: var(--color-btn-primary-text);
+    background: var(--color-btn-primary-fill);
+    border-color: var(--color-btn-primary-active-boundary);
+  }
+
+  &.disabled,
+  &[disabled] {
+    background: var(--color-btn-disabled-fill);
+    border-color: var(--color-btn-boundary);
+    opacity: 0.3;
+
+    // Usually used in places where primary bg is needed, when the btn is in disabled state (ex: side modals)
+    &.with-accent {
+      background: var(--color-btn-primary-disabled-fill);
+      border-color: var(--color-boundary-border);
+      color: var(--color-text-inverse) !important;
+      opacity: 0.5;
+    }
+  }
+}

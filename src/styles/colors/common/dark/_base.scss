@@ -1,0 +1,87 @@
+// Dark Theme Base color variables used in Legacy and Ember
+
+@mixin dark-theme-common-base-colors {
+	--color-text-brand: #{$A400};
+	--color-text-primary: #{$S100};
+	--color-text-secondary: #{$S300};
+	--color-text-disabled: #{$S500};
+	--color-text-placeholder: #{$S400};
+	--color-text-inverse: #{$Coal};
+	--color-text-semantic-success: #{$J400};
+	--color-text-semantic-warning: #{$C400};
+	--color-text-semantic-error: #{$P400};
+	--color-text-semantic-info: #{$A400};
+	--color-text-semantic-highlight: #{$I400};
+
+	--color-icon-primary: #{$S300};
+	--color-icon-selected: #{$A400};
+	--color-icon-disabled: #{$S500};
+	--color-icon-inverse: #{$Coal};
+	--color-icon-semantic-success: #{$J400};
+	--color-icon-semantic-warning: #{$C400};
+	--color-icon-semantic-error: #{$P400};
+	--color-icon-semantic-info: #{$A400};
+	--color-icon-semantic-highlight: #{$I400};
+
+	--color-fill-surface: #{$dark-neutral-1};
+	--color-fill-container: #{$dark-neutral-2};
+	--color-fill-base: #{$dark-neutral-3};
+	--color-fill-neutral: #{$E100};
+	--color-fill-neutral-bold: #{$E50};
+	--color-fill-brand: #{$A400};
+	--color-fill-semantic-success-mildest: #{$J900};
+	--color-fill-semantic-success-mild: #{$J600};
+	--color-fill-semantic-success: #{$J500};
+	--color-fill-semantic-success-bold: #{$J400};
+	--color-fill-semantic-warning-mildest: #{$C900};
+	--color-fill-semantic-warning-mild: #{$C600};
+	--color-fill-semantic-warning: #{$C500};
+	--color-fill-semantic-warning-bold: #{$C400};
+	--color-fill-semantic-error-mildest: #{$P900};
+	--color-fill-semantic-error-mild: #{$P600};
+	--color-fill-semantic-error: #{$P500};
+	--color-fill-semantic-error-bold: #{$P400};
+	--color-fill-semantic-error-bolder: #{$P300};
+	--color-fill-semantic-info-mildest: #{$A900};
+	--color-fill-semantic-info-mild: #{$A600};
+	--color-fill-semantic-info: #{$A500};
+	--color-fill-semantic-info-bold: #{$A400};
+	--color-fill-semantic-highlight-mildest: #{$I900};
+	--color-fill-semantic-highlight-mild: #{$I600};
+	--color-fill-semantic-highlight: #{$I500};
+	--color-fill-semantic-highlight-bold: #{$I400};
+
+	// Overlay Colors
+	--color-overlay-container: var(--color-fill-container); // Deprecated
+	--color-overlay-neutral: #{rgba($S700, 0.2)};
+	--color-overlay-semantic-success: #{rgba($J700, 0.2)};
+	--color-overlay-semantic-warning: #{rgba($C700, 0.2)};
+	--color-overlay-semantic-error: #{rgba($P700, 0.2)};
+	--color-overlay-semantic-info: #{rgba($A700, 0.2)};
+	--color-overlay-semantic-highlight: #{rgba($I700, 0.2)};
+
+	// TODO: Should change this token's value to $S900
+	// and replace usage with --color-boundary-border-mild
+	--color-boundary-border-mildest: #{$S800};
+	--color-boundary-border-mild: #{$S800};
+	--color-boundary-border: #{$S500};
+	--color-boundary-border-boldest: #{$S50};
+	--color-boundary-divider-mildest: #{$S900};
+	--color-boundary-divider: #{$S800};
+	--color-boundary-brand: #{$A500};
+	--color-boundary-semantic-success-mildest: #{$J900};
+	--color-boundary-semantic-success-mild: #{$J800};
+	--color-boundary-semantic-success: #{$J500};
+	--color-boundary-semantic-warning-mildest: #{$C900};
+	--color-boundary-semantic-warning-mild: #{$C800};
+	--color-boundary-semantic-warning: #{$C500};
+	--color-boundary-semantic-error-mildest: #{$P900};
+	--color-boundary-semantic-error-mild: #{$P800};
+	--color-boundary-semantic-error: #{$P500};
+	--color-boundary-semantic-info-mildest: #{$A900};
+	--color-boundary-semantic-info-mild: #{$A800};
+	--color-boundary-semantic-info: #{$A500};
+	--color-boundary-semantic-highlight-mildest: #{$I900};
+	--color-boundary-semantic-highlight-mild: #{$I800};
+	--color-boundary-semantic-highlight: #{$I500};
+}

@@ -1,0 +1,18 @@
+// Dark Theme Alpha color variables used in Legacy and Ember
+
+@mixin dark-theme-common-alpha-colors {
+	--color-fill-neutral-bold-0-3: #{rgba($E50, 0.3)};
+	--color-fill-neutral-bold-0-5: #{rgba($E50, 0.5)};
+
+	--color-fill-semantic-warning-mildest-0-6: #{rgba($C900, 0.6)};
+
+	--color-fill-surface-0-2: #{rgba($Coal, 0.2)};
+	--color-fill-surface-0-4: #{rgba($Coal, 0.4)};
+	--color-fill-surface-0-5: #{rgba($Coal, 0.5)};
+	--color-fill-surface-0-7: #{rgba($Coal, 0.7)};
+	--color-fill-surface-0-8: #{rgba($Coal, 0.8)};
+
+	--color-text-inverse-0-75: #{rgba($Coal, 0.75)};
+
+	--color-text-primary-0-5: #{rgba($S100, 0.5)};
+}

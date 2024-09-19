@@ -1,0 +1,7 @@
+/**
+ * - CSS Color variables that are common for Legacy and Ember should be added in this folder
+ * - This folder should be in sync with Legacy's `public/src/colors/common` folder to avoid
+ *   any issues related to Colors loaded when App is loading in 3000 port vs 4200 port
+ */
+@import "dark/main";
+@import "light/main";

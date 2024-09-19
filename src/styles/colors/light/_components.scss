@@ -1,0 +1,27 @@
+// Light Theme Components Color variables used in Ember
+$freddy-color-1: #8A80FF;
+$freddy-color-2: #0085FF;
+$freddy-color-3: #FFCE22;
+
+
+@mixin light-theme-components-colors {
+	--color-card-shadow: 0px 1px 6px var(--color-shadow-0-05);
+	--app-border: 1px solid var(--color-boundary-border-mildest);
+
+	// Table Colors
+	--table-td-border-color: var(--color-boundary-divider-mildest);
+	--table-tr-selected-background:
+		linear-gradient(
+			var(--color-overlay-semantic-info),
+			var(--color-overlay-semantic-info)
+		),
+		linear-gradient(var(--color-fill-surface), var(--color-fill-surface));
+
+	// Freddy Colors
+	--freddy-border-1: #{$freddy-color-1};
+	--freddy-border-2: #{$freddy-color-2};
+	--freddy-border-3: #{$freddy-color-3};
+	--freddy-fill-1: #{rgba($freddy-color-1, 0.06)};
+	--freddy-fill-2: #{rgba($freddy-color-2, 0.06)};
+	--freddy-fill-3: #{rgba($freddy-color-3, 0.06)};
+}

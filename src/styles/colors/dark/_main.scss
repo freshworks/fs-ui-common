@@ -1,0 +1,20 @@
+@import "alpha";
+@import "components";
+
+@mixin dark-theme-root-styles {
+	@include dark-theme-alpha-colors;
+	@include dark-theme-components-colors;
+	color-scheme: dark;
+}
+
+:root {
+	&.dark-theme {
+		@include dark-theme-root-styles;
+	}
+
+	&.system-theme {
+		@media (prefers-color-scheme: dark) {
+			@include dark-theme-root-styles;
+		}
+	}
+}
