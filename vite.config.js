@@ -12,6 +12,7 @@ export default () => {
       lib: {
         entry: entries,
         name: "FS UI Library",
+        formats: ['es', 'cjs']
       },
       rollupOptions: {
         input: {
