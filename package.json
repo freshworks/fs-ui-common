@@ -1,11 +1,11 @@
 {
-  "name": "fs-ui-library",
+  "name": "fs-ui-common",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/deva-potturu/fs-ui-library"
+    "url": "https://github.com/deva-potturu/fs-ui-common"
   },
   "scripts": {
     "dev": "vite",
