@@ -1,0 +1,100 @@
+/**
+	* NOTE: Currently gets included only in 4200 port build, not in 3000 port build. !!!
+	*/
+
+input[type="checkbox"] {
+	position: relative;
+	-webkit-appearance: none;
+	background: var(--color-fill-surface);
+	border: solid 1px var(--color-boundary-border-mildest);
+	margin: 0;
+	margin-right: 5px !important;
+	height: 14px !important;
+	width: 14px !important;
+	border-radius: 2px;
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+
+	& + label {
+		display: inline;
+	}
+
+	&:after {
+		position: absolute;
+		display: block;
+		content: "";
+		box-sizing: border-box;
+		left: 2px;
+		top: 3px;
+		width: 8px;
+		height: 8px;
+		transition: opacity 0.2s ease-in-out;
+	}
+	&:hover {
+		border-color: var(--color-boundary-border);
+		background: var(--color-fill-base);
+		box-shadow: 0 0 0 4px var(--color-shadow-0-1);
+	}
+	&:active,
+	&:focus {
+		background: var(--color-fill-surface);
+		border: 1px solid var(--color-boundary-brand);
+		box-shadow: 0 0 0 1px var(--color-boundary-brand);
+		outline: none;
+	}
+	&:checked {
+		background: var(--color-fill-brand);
+		border: 1px solid var(--color-boundary-brand);
+		box-shadow: none;
+		outline: none;
+	}
+	&:checked:hover {
+		background: var(--color-fill-brand);
+		box-shadow: 0 0 0 4px var(--color-shadow-0-1);
+	}
+	&:checked:after {
+		background: url("/a/assets/images/app-common/tick.svg") no-repeat;
+	}
+	&:checked:focus,
+	&:checked:active {
+		border-color: var(--color-fill-surface);
+		box-shadow: 0 0 0 1px var(--color-boundary-brand);
+	}
+	&:indeterminate {
+		background: var(--color-fill-neutral);
+		border-color: var(--color-fill-neutral);
+	}
+	&:indeterminate:after {
+		border-right: 2px solid var(--color-fill-surface);
+		border-bottom: 2px solid var(--color-fill-surface);
+		opacity: 1;
+		left: 2px;
+		top: 5px;
+		width: 8px;
+		height: 0px;
+		transform: rotate(180deg);
+		border-radius: 2px;
+	}
+	&:focus:indeterminate {
+		border-color: var(--color-fill-surface);
+	}
+	&[disabled],
+	&.disabled {
+		background: var(--color-fill-base);
+		border: 1px solid var(--color-boundary-border-mildest);
+	}
+
+	&[disabled]:checked,
+	&.disabled:checked {
+		background: var(--color-fill-base);
+		border: 1px solid var(--color-boundary-border-mildest);
+		&:after {
+			border-right: 2px solid var(--color-boundary-border);
+			border-bottom: 2px solid var(--color-boundary-border);
+		}
+	}
+	&.hide {
+		display: none;
+	}
+}

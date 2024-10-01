@@ -1,0 +1,102 @@
+// -------------------------
+// Page layouts
+// -------------------------
+
+$global-nav-width: 64px;
+$global-header-width: 64px;
+$global-nav-width-expanded: 248px;
+$page-sidebar-width: 300px;
+$page-adv-filters-sidebar-width: 416px;
+$page-margin-top: 16px;
+$page-margin-left: 16px;
+$page-margin-right: 16px;
+$page-margin-bottom: 16px;
+$new-page-margin-top: 16px;
+$new-page-margin-left: 32px;
+$new-page-margin-right: 32px;
+$new-page-margin-bottom: 40px;
+
+$radius: 4px;
+$radius-2: 8px;
+$modal-width: 512px;
+// -------------------------
+// Font size and weights
+// -------------------------
+$baseLineHeight: 1.5;
+$baseFontSize: 14px;
+
+$text-small: 10px;
+$text-normal: 12px;
+$title-small: 14px;
+
+$title-normal: 16px;
+$text-large: 18px;
+$title-large: 20px;
+$title-extra-large: 24px;
+$font-icon-large: 30px;
+
+$text-weight-light: 300;
+$text-weight-normal: 400;
+$text-weight-medium: 500;
+$text-weight-semi-bold: 600;
+$text-weight-bold: 700;
+$text-weight-boldest: 800;
+$text-weight-bolder: 900;
+
+// -------------------------
+// Variables from Rails
+// -------------------------
+
+$baseFontFamily: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+	"Helvetica Neue", Arial, sans-serif !default;
+
+// -------------------------
+// Buttons
+// -------------------------
+$btnBaseLineHeight: 22px !default;
+$btnHeight: 32px;
+
+// -------------------------
+// Input
+// -------------------------
+$inputBorderRadius: 4px !default;
+
+// Dashboard Visualization Colors
+//---------------------------
+$lavender: #eaf5fc;
+$aliceBlue: #e5ecff;
+$deepSkyNavyBlue: linear-gradient(102.9deg, #0272da 0%, #039dee 100.07%);
+$violetLightSlateBlue: linear-gradient(
+	102.41deg,
+	#7d15d6 -27.26%,
+	#ac4ff9 100.15%
+);
+$limeYellowBahiaGreen: linear-gradient(
+	103.04deg,
+	#36b331 0.01%,
+	#87d123 100.15%,
+	#a0da1f 100.16%
+);
+$sanMarinoDanubeBlue: linear-gradient(103.1deg, #5372a1 0.16%, #6487bc 99.93%);
+$ferraSandriftBrown: linear-gradient(103.04deg, #8d6e63 0%, #a9867a 100.15%);
+
+$hummingBirdGreenBorder: #b4e5da;
+$aliceBlueBorder: #bfc2ff;
+$aliceBlueText: #555abf;
+$alertText: #b5561d;
+$criticalText: #aa0407;
+
+// ----------------------------------
+// Avatar
+// ----------------------------------
+$svgRadius: 12px;
+
+// ----------------------------------
+// Input Range Slider
+// ----------------------------------
+$sliderRadius: 8px;
+$sliderTrack-w: 210px;
+$sliderTrack-h: 6px;
+$sliderThumb-d: 14px;
+
+$tabs-nav-menu-height: 40px;

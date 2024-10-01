@@ -1,0 +1,13 @@
+/**
+	* NOTE: Currently gets included only in 3036 port build, not in 3000 port build. !!!
+	*/
+
+label {
+  display: block;
+  padding-bottom: 4px;
+}
+
+a {
+	color: var(--color-text-brand);
+	text-decoration: none;
+}

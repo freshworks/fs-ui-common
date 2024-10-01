@@ -1,0 +1,665 @@
+/**
+	* NOTE: Currently gets included only in 4200 port build, not in 3000 port build. !!!
+	*/
+
+// Base styles
+// --------------------------------------------------
+
+// Core
+@use "sass:math";
+
+.btn {
+	display: inline-block;
+	box-sizing: border-box;
+	height: $btnHeight;
+	padding: 4px 12px;
+	margin-top: 0;
+	margin-bottom: 0; // For input.btn
+	font-size: $baseFontSize;
+	line-height: $btnBaseLineHeight;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	background: var(--color-btn-fill);
+	border: 1px solid var(--color-btn-boundary);
+	border-radius: $inputBorderRadius;
+	color: var(--color-btn-text) !important;
+	font-weight: 600;
+	// box-shadow: 0 1px 0 0 rgba(24, 50, 71, 0.05);
+	margin-right: 8px;
+
+	// Hover state
+	&:hover {
+		color: var(--color-btn-text);
+		text-decoration: none;
+		background: var(--color-btn-hover-fill);
+		border-color: var(--color-btn-boundary) !important;
+	}
+
+	// Focus state for keyboard and accessibility
+	&:focus {
+		outline: none;
+		background: var(--color-btn-fill);
+		border-color: var(--color-btn-focus-boundary);
+		box-shadow: 0 0 0 1px var(--color-btn-focus-boundary);
+	}
+
+	// Active state
+	&.active,
+	&:active,
+	&-active {
+		border: 1px solid var(--color-btn-boundary);
+		box-shadow:
+			inset 0 0 4px 0 var(--color-shadow-0-26),
+			0 1px 0 0 var(--color-shadow-0-05);
+		background: var(--color-btn-fill);
+	}
+
+	// Disabled state
+	&.disabled,
+	&[disabled] {
+		border-color: var(--color-btn-boundary);
+		cursor: default;
+		color: var(--color-text-placeholder) !important;
+		background: var(--color-btn-disabled-fill);
+		box-shadow: none;
+	}
+	&.hide {
+		display: none;
+	}
+
+	&.btn-icon {
+		min-width: 32px;
+		justify-content: center;
+		padding: 0;
+		display: inline-flex;
+		align-items: center;
+		cursor: pointer;
+
+		&.btn-icon-text {
+			padding: 0 8px;
+
+			& > span {
+				padding-left: 8px;
+			}
+		}
+
+		svg {
+			width: 15px;
+			height: 15px;
+			pointer-events: none;
+			fill: var(--color-btn-icon);
+		}
+	}
+}
+
+.btn-bold {
+	font-weight: 600;
+}
+// Button Sizes
+// --------------------------------------------------
+
+// Large
+.btn-large {
+	padding: 9px 14px;
+	font-size: $baseFontSize + 2px;
+	line-height: normal;
+	border-radius: 5px;
+}
+.btn-large [class^="icon-"] {
+	margin-top: 2px;
+}
+
+// Small
+.btn-small {
+	padding: 6px 9px;
+	font-size: $baseFontSize - 2px;
+	line-height: $baseLineHeight - 2px;
+}
+.btn-small [class^="icon-"] {
+	margin-top: 0px;
+}
+
+// slim
+.btn.slim {
+	padding: 2px 9px 3px;
+	font-size: 11px;
+	border-radius: 10px;
+}
+
+// Mini
+.btn-mini {
+	height: 24px;
+	padding: 2px 8px;
+	font-size: $baseFontSize - 2px;
+	line-height: $baseLineHeight - 2px;
+}
+
+// Mini with icon
+.btn-mini [class^="icon-"] {
+	margin-right: -3px;
+	margin-left: -3px;
+}
+
+//With white BG
+.btn-white {
+	background: var(--color-fill-surface);
+}
+
+// Block button
+// -------------------------
+
+.btn-block {
+	display: block;
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+	box-sizing: border-box;
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+	margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	&.btn-block {
+		width: 100%;
+	}
+}
+
+// Alternate buttons
+// --------------------------------------------------
+
+// Provide *some* extra contrast for those who can get it
+.btn-primary.active,
+.btn-warning.active,
+.btn-danger.active,
+.btn-success.active,
+.btn-inverse.active {
+	color: var(--color-btn-special-active-text);
+}
+
+// Set the backgrounds
+// -------------------------
+.btn-primary {
+	background: var(--color-btn-primary-fill);
+	color: var(--color-btn-primary-text) !important;
+	font-weight: 600;
+	border: 1px solid var(--color-btn-primary-boundary);
+	box-shadow: 0 1px 0 0 var(--color-shadow-0-05);
+
+	&:hover {
+		color: var(--color-btn-primary-text);
+		background: var(--color-btn-primary-hover-fill);
+		border-color: var(--color-btn-primary-boundary) !important;
+	}
+
+	&:focus {
+		outline: none;
+		color: var(--color-btn-primary-text);
+		background: var(--color-btn-primary-fill);
+		border-color: var(--color-btn-primary-fill);
+		box-shadow: 0 0 0 1px var(--color-btn-focus-boundary);
+	}
+
+	&:active,
+	&.active {
+		color: var(--color-btn-primary-text);
+		background: var(--color-btn-primary-fill);
+		border-color: var(--color-btn-primary-active-boundary);
+	}
+
+	&.disabled,
+	&[disabled] {
+		background: var(--color-btn-disabled-fill);
+		border-color: var(--color-btn-boundary);
+		opacity: 0.3;
+
+		// Usually used in places where primary bg is needed, when the btn is in disabled state (ex: side modals)
+		&.with-accent {
+			background: var(--color-btn-primary-disabled-fill);
+			border-color: var(--color-boundary-border);
+			color: var(--color-text-inverse) !important;
+			opacity: 0.5;
+		}
+	}
+}
+
+//Record Button
+.btn-record {
+	&:before {
+		content: "";
+		width: 10px;
+		height: 10px;
+		background: var(--color-fill-semantic-error-bold);
+		border-radius: 100%;
+		display: inline-block;
+		margin: 3px 5px 0 -8px;
+	}
+}
+
+// Danger and error appear as red
+.btn-danger {
+	background: var(--color-btn-danger-fill);
+	border: 1px solid var(--color-btn-danger-boundary);
+	color: var(--color-btn-danger-text) !important;
+	&:hover {
+		background: var(--color-btn-danger-hover-fill);
+		border: 1px solid var(--color-btn-danger-boundary) !important;
+	}
+	&:active,
+	&.active {
+		color: var(--color-btn-danger-text);
+		background: var(--color-btn-danger-fill) !important;
+		border-color: var(--color-btn-danger-active-boundary) !important;
+		box-shadow:
+			inset 0 0 4px 0 var(--color-shadow-0-26),
+			0 1px 0 0 var(--color-shadow-0-05);
+	}
+	&.disabled,
+	&[disabled] {
+		background: var(--color-btn-disabled-fill);
+		border-color: var(var(--color-btn-boundary));
+		opacity: 0.3;
+	}
+}
+
+// Cross-browser Jank
+// --------------------------------------------------
+
+button.btn,
+input[type="submit"].btn {
+	// Firefox 3.6 only I believe
+	&::-moz-focus-inner {
+		padding: 0;
+		border: 0;
+	}
+
+	&.btn-large {
+		padding-top: 7px;
+		padding-bottom: 7px;
+	}
+	&.btn-small {
+		padding-top: 3px;
+		padding-bottom: 3px;
+	}
+	&.btn-mini {
+		padding-top: 1px;
+		padding-bottom: 1px;
+	}
+}
+
+// Link buttons
+// --------------------------------------------------
+
+// Make a button look and behave like a link
+.btn-link,
+.btn-link:active,
+.btn-link[disabled] {
+	background: none !important;
+	background-color: transparent;
+	background-image: none !important;
+	box-shadow: none;
+}
+.btn-link {
+	border-color: transparent;
+	cursor: pointer;
+	color: var(--color-btn-link-text);
+	border-radius: 0;
+	font-size: $baseFontSize;
+	&.btn-link-icon-text {
+		font-family: inherit;
+		svg,
+		span {
+			vertical-align: middle;
+		}
+		svg {
+			margin-right: 4px;
+		}
+	}
+	&.btn-link-copy {
+		color: var(--color-btn-link-text) !important;
+		border: none;
+		align-self: flex-start;
+		padding: 0 12px;
+		height: auto;
+		&:focus {
+			border: none;
+			border-color: transparent;
+			box-shadow: none;
+		}
+	}
+
+	svg {
+		width: 16px;
+		height: 16px;
+		fill: var(--color-btn-link-icon);
+	}
+}
+.btn-link:hover {
+	text-decoration: underline;
+	background-color: transparent;
+}
+.btn-link[disabled]:hover {
+	color: var(--color-text-primary);
+	text-decoration: none;
+	svg {
+		fill: var(--color-icon-primary);
+	}
+}
+
+.disabled {
+	pointer-events: none;
+	cursor: default;
+	color: var(--color-text-placeholder);
+	&:hover {
+		color: var(--color-text-placeholder);
+	}
+}
+
+// Flat buttons for special cases
+// --------------------------------------------------
+
+//
+// Button groups
+// --------------------------------------------------
+
+// Make the div behave like a button
+.btn-group {
+	position: relative;
+	font-size: 0; // remove as part 1 of font-size inline-block hack
+	vertical-align: middle; // match .btn alignment given font-size hack above
+	white-space: nowrap; // prevent buttons from wrapping when in tight spaces (e.g., the table on the tests page)
+	// @include ie7-restore-left-whitespace();
+	.dropdown-toggle {
+		background-image: none;
+	}
+	// Keep the hover's background when dropdown is open
+	.btn.dropdown-toggle {
+		background: var(--color-btn-fill);
+	}
+	.btn-primary.dropdown-toggle {
+		background: var(--color-btn-primary-fill);
+	}
+}
+
+// Space out series of button groups
+.btn-group + .btn-group {
+	margin-left: 5px;
+}
+
+// Optional: Group multiple button groups together for a toolbar
+.btn-toolbar {
+	font-size: 0; // Hack to remove whitespace that results from using inline-block
+	margin-top: math.div($baseLineHeight, 2);
+	margin-bottom: math.div($baseLineHeight, 2);
+	.btn-group {
+		display: inline-block;
+		// @include ie7-inline-block();
+	}
+	.btn + .btn,
+	.btn-group + .btn,
+	.btn + .btn-group {
+		margin-left: 5px;
+	}
+}
+
+// Float them, remove border radius, then re-add to first and last elements
+.btn-group > .btn {
+	position: relative;
+	border-radius: 0;
+	min-width: 32px;
+}
+.btn-group > .btn + .btn {
+	margin-left: -9px;
+}
+.btn-group > .btn,
+.btn-group > .dropdown-menu {
+	font-size: $baseFontSize; // redeclare as part 2 of font-size inline-block hack
+}
+
+// Reset fonts for other sizes
+.btn-group > .btn-mini {
+	font-size: 11px;
+}
+.btn-group > .btn-small {
+	font-size: 12px;
+}
+.btn-group > .btn-large {
+	font-size: 16px;
+}
+
+// Set corners individual because sometimes a single button can be in a .btn-group and we need :first-child and :last-child to both match
+.btn-group > .btn:first-child {
+	margin-left: 0; // No need RTl support here
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+// Need .dropdown-toggle since :last-child doesn't apply given a .dropdown-menu immediately after it
+.btn-group > .btn:last-child,
+.btn-group > .dropdown-toggle {
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+// Reset corners for large buttons
+.btn-group > .btn.large:first-child {
+	margin-left: 0;
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+}
+.btn-group > .btn.large:last-child,
+.btn-group > .large.dropdown-toggle {
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+}
+
+// On active and open, don't show outline
+.btn-group .dropdown-toggle:active,
+.btn-group.open .dropdown-toggle {
+	outline: 0;
+	@extend .btn, .active;
+}
+
+.btn-group .dropdown-toggle.btn-link:active,
+.btn-group.open .dropdown-toggle.btn-link {
+	outline: 0;
+	border: none !important;
+	background: none !important;
+	background-color: transparent;
+	background-image: none !important;
+	box-shadow: none !important;
+}
+
+.btn-group .dropdown-toggle.btn-primary:active,
+.btn-group.open .dropdown-toggle.btn-primary {
+	outline: 0;
+	@extend .btn-primary, .active;
+}
+
+// Split button dropdowns
+// ----------------------
+
+// Give the line between buttons some depth
+.btn-group > .btn + .dropdown-toggle {
+	padding-left: 8px;
+	padding-right: 8px;
+	border-left: 1px solid var(--color-btn-boundary);
+}
+.btn-group > .btn-mini + .dropdown-toggle {
+	padding-left: 5px;
+	padding-right: 5px;
+	border-left: 1px solid var(--color-btn-boundary);
+}
+.btn-group > .btn-large + .dropdown-toggle {
+	padding-left: 12px;
+	padding-right: 12px;
+	border-left: 1px solid var(--color-btn-boundary);
+}
+
+.btn-group > .btn-primary + .dropdown-toggle {
+	border-left: 1px solid var(--color-btn-primary-boundary);
+}
+
+// Reposition the caret
+.btn .caret {
+	margin-top: 0;
+	margin-left: 2px;
+	font-size: 10px;
+}
+
+// Carets in other button sizes
+.btn-mini .caret,
+.btn-small .caret,
+.btn-large .caret {
+	margin-top: 6px;
+}
+.btn-large .caret {
+	border: none;
+}
+// Upside down carets for .dropup
+.dropup .btn-large .caret {
+	border: none;
+}
+
+// Account for other colors
+.btn-primary,
+.btn-warning,
+.btn-danger,
+.btn-success,
+.btn-inverse {
+	.caret {
+		border: none;
+	}
+}
+
+// Vertical button groups
+// ----------------------
+
+.btn-group-vertical {
+	display: inline-block; // makes buttons only take up the width they need
+	// @include ie7-inline-block();
+}
+.btn-group-vertical .btn {
+	display: block;
+	float: none;
+	width: 100%;
+	border-radius: 0;
+}
+.btn-group-vertical .btn + .btn {
+	margin-left: 0;
+	margin-top: -1px;
+}
+.btn-group-vertical .btn:first-child {
+	border-radius: 4px 4px 0 0;
+}
+.btn-group-vertical .btn:last-child {
+	border-radius: 0 0 4px 4px;
+}
+.btn-group-vertical .btn-large:first-child {
+	border-radius: 6px 6px 0 0;
+}
+.btn-group-vertical .btn-large:last-child {
+	border-radius: 0 0 6px 6px;
+}
+
+.slim-button {
+	@extend .btn;
+	@extend .btn-mini;
+}
+
+.btn-link-copy {
+	display: inline-flex !important;
+	align-items: center;
+	font-weight: 400 !important;
+
+	svg {
+		width: 15px;
+		height: 15px;
+		pointer-events: none;
+		fill: var(--color-icon-selected);
+		margin-right: 8px;
+	}
+
+	&:hover {
+		border: none;
+	}
+}
+
+.btn-ghost {
+	background: var(--color-fill-surface);
+}
+
+[role="button"] {
+	&:focus {
+		box-shadow: 0px 0px 0px 2px var(--color-boundary-brand);
+		border-radius: 4px;
+	}
+
+	&:focus:not(:focus-visible) {
+		box-shadow: none;
+	}
+
+	&:focus-visible {
+		box-shadow: 0px 0px 0px 2px var(--color-boundary-brand);
+	}
+}
+
+button.btn-list-item {
+	width: 100%;
+	border: none;
+	text-align: left;
+	color: var(--color-text-primary);
+	background-color: transparent;
+	cursor: pointer;
+	font-size: inherit;
+	line-height: inherit;
+
+	&:focus-visible {
+		box-shadow: 0px 0px 0px 2px var(--color-boundary-brand);
+	}
+}
+
+.btn-no-bg {
+	background: none !important;
+	border: none;
+	box-shadow: none;
+	&:focus,
+	&:active {
+		border: none;
+		box-shadow: none;
+	}
+}
+
+.keyboard-user {
+	a:focus {
+		box-shadow: 0 0 0 1px var(--color-boundary-brand);
+		border-radius: 4px;
+	}
+
+	.btn-no-bg,
+	.dropdown-trigger-btn,
+	.btn-link {
+		background: none !important;
+		box-shadow: none;
+		&:focus,
+		&:active {
+			border: 1px solid var(--color-btn-link-text) !important;
+			box-shadow: 0 0 0 1px var(--color-boundary-brand) !important;
+			border-color: var(--color-btn-focus-boundary) !important;
+		}
+	}
+}
+
+.btn-transparent {
+	background: transparent !important;
+	border: 1px solid transparent;
+	padding: 4px !important;
+	box-shadow: none;
+	&:hover {
+		border-color: transparent !important;
+	}
+}

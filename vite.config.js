@@ -17,7 +17,8 @@ export default () => {
       rollupOptions: {
         input: {
           "fs-colors": "./src/styles/colors/main.scss",
-          "fs-button": "./src/styles/components/button/button.scss",
+          "fs-base-styles": "./src/styles/app-components/main.scss",
+          "fs-reset": "./src/styles/base/reset.scss",
         },
         output: {
           entryFileNames: `assets/[name].js`,
