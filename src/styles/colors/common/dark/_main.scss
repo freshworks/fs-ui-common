@@ -10,11 +10,11 @@
 }
 
 :root {
-	&.dark-theme {
+	&.fservice-dark-theme {
 		@include dark-theme-common-root-styles;
 	}
 
-	&.system-theme {
+	&.fservice-system-theme {
 		@media (prefers-color-scheme: dark) {
 			@include dark-theme-common-root-styles;
 		}
