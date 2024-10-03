@@ -23,11 +23,5 @@
   "exports": {
     "./styles/*": "./dist/assets/styles/*",
     "./svg/*": "./dist/svg/*"
-  },
-  "files": [
-    "dist"
-  ],
-  "publishConfig": {
-    "access": "public"
   }
 }
