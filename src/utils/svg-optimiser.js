@@ -3,7 +3,7 @@ import { optimize } from 'svgo';
 // import svgoConfig from '../config/svgo-config.js';
 import { execSync } from 'child_process';
 
-export const svgOptimizer = ({ stagedSvgFiles = [], inlineSVGSourceDirectory = '', rootDirectory = '' }) => {
+export const svgOptimizer = ({ stagedSvgFiles = [], inlineSVGSourceDirectory = '', rootDirectory = '', imageDirectory = '' }) => {
 
   console.log(`stagedSvgFiles >>>>>> ${stagedSvgFiles} \n inlineSVGSourceDirectory >>>>>> ${inlineSVGSourceDirectory} \n rootDirectory >>>>>> ${rootDirectory} `);
   
@@ -35,7 +35,7 @@ export const svgOptimizer = ({ stagedSvgFiles = [], inlineSVGSourceDirectory = '
       if (sizeThen > 2 && isInlineSVG) {
         // SVGs greater than 2 kb shouldn't be inline
         console.error(
-          `\x1b[31mError: ${filepath} is too big for inline SVG. They should be 2 KiB or less.\nConsider uploading this to /image/ dir. and using as an SVG image.\x1b[0m`,
+          `\x1b[31mError: ${filepath} is too big for inline SVG. They should be 2 KiB or less.\nConsider uploading this to ${imageDirectory} dir. and using as an SVG image.\x1b[0m`,
         );
         process.exit(1);
       }
