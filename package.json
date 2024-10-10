@@ -12,8 +12,7 @@
     "prebuild": "rm -rf dist",
     "build": "vite build",
     "preview": "vite preview",
-    "prepublishOnly": "npm run build",
-    "prepare": "husky install"
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "husky": "^8.0.0",
