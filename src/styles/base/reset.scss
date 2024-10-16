@@ -1,4 +1,6 @@
 //Html elements level reset and global classes reset are added here
+@import "./variables";
+
 * {
 	box-sizing: border-box;
 	-webkit-font-smoothing: antialiased;
@@ -86,6 +88,10 @@ video {
 	font-size: 100%;
 	font-family: inherit;
 	vertical-align: baseline;
+}
+
+body {
+	font-family: $baseFontFamily;
 }
 
 svg {
