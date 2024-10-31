@@ -7,14 +7,12 @@
 	color-scheme: dark;
 }
 
-:host {
-	&.fservice-dark-theme {
-		@include dark-theme-root-styles;
-	}
+:host(.fservice-dark-theme) {
+	@include dark-theme-root-styles;
+}
 
-	&.fservice-system-theme {
-		@media (prefers-color-scheme: dark) {
-			@include dark-theme-root-styles;
-		}
+:host(.fservice-system-theme) {
+	@media (prefers-color-scheme: dark) {
+		@include dark-theme-root-styles;
 	}
 }
