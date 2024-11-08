@@ -1,11 +1,11 @@
 {
-  "name": "@deva-potturu/fs-ui-common",
-  "private": false,
-  "version": "1.0.1",
+  "name": "@freshworks/fs-ui-common",
+  "description": "Freshservice UI Common library",
+  "version": "0.0.1",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deva-potturu/fs-ui-common.git"
+    "url": "https://github.com/freshworks/fs-ui-common"
   },
   "scripts": {
     "dev": "vite",
