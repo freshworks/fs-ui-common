@@ -8,7 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
+# dist     # will uncomment it once github packages is created for the same
 dist-ssr
 *.local
 

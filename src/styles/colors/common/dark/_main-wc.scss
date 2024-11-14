@@ -1,0 +1,20 @@
+@import "base";
+@import "alpha";
+@import "components";
+
+@mixin dark-theme-common-root-styles {
+	@include dark-theme-common-base-colors;
+	@include dark-theme-common-alpha-colors;
+	@include dark-theme-common-components-colors;
+	color-scheme: dark;
+}
+
+:host([data-theme-preference="fservice-dark-theme"]) {
+    @include dark-theme-common-root-styles;
+}
+
+:host([data-theme-preference="fservice-system-theme"]) {
+    @media (prefers-color-scheme: dark) {
+        @include dark-theme-common-root-styles;
+    }
+}
