@@ -1,12 +1,13 @@
 {
   "name": "@freshworks/fs-ui-common",
   "description": "Freshservice UI Common library",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/freshworks/fs-ui-common"
   },
+  "files": ["dist"],
   "scripts": {
     "dev": "vite",
     "prebuild": "rm -rf dist",
