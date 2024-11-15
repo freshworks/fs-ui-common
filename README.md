@@ -16,6 +16,6 @@ If you want to link the `fs-ui-common` with your new changes which are not yet m
 
 ```js
   dependencies: {
-    "@deva-potturu/fs-ui-common": "git+ssh://git@github.com/deva-potturu/fs-ui-common.git#dd221cf32b6aed958cc2969d188d45358ec78f8e",
+    "@freshworks/fs-ui-common": "git+ssh://git@github.com/freshworks/fs-ui-common.git#dd221cf32b6aed958cc2969d188d45358ec78f8e",
   }
 ```
