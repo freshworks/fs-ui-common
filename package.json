@@ -11,6 +11,7 @@
   "scripts": {
     "dev": "vite",
     "prebuild": "rm -rf dist",
+    "prepare": "husky install",
     "build": "vite build",
     "preview": "vite preview",
     "prepublishOnly": "npm run build"
