@@ -30,6 +30,6 @@
   "exports": {
     "./styles/*": "./dist/assets/styles/*",
     "./svgs/*": "./dist/svgs/*",
-    "./utils/*": "./dist/utils/*"
+    "./utils/*": "./dist/assets/*"
   }
 }
