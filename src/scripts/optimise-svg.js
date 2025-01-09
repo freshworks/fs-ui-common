@@ -1,4 +1,4 @@
-import { svgOptimizer } from '../utils/svg-optimiser.js';
+import { svgOptimizer } from '../utils/svg-optimiser';
 
 const stagedSvgFiles = process.argv.slice(2);
 const inlineSVGSourceDirectory = ['public/svgs/inline-svgs'];
