@@ -27,7 +27,6 @@
   },
   "exports": {
     "./styles/*": "./dist/assets/styles/*",
-    "./svgs/*": "./dist/svgs/*",
-    "./utils/*": "./dist/utils/*"
+    "./svgs/*": "./dist/svgs/*"
   }
 }
