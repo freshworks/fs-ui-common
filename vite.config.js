@@ -24,24 +24,23 @@ export default () => {
           ...generateInputsFromFolder('./src/utils'),
         },
         output: {
-          // entryFileNames: (chunkInfo) => {
-          //   const { facadeModuleId } = chunkInfo;
-          //   // By default entry files are placed under assets folder, to group them under other folders based on module type, add those folders here
-          //   const moduleTypes = ['utils'];
-          //   for (let i = 0; i < moduleTypes.length; i++) {
-          //     if (facadeModuleId?.includes(moduleTypes[i])) {
-          //       const moduleType = moduleTypes[i];
-          //       const [, lastPart] = facadeModuleId.split(moduleTypes[i]);
-          //       const lastFolders = lastPart.slice(
-          //         0,
-          //         lastPart.lastIndexOf('/'),
-          //       );
-          //       return `${moduleType}${lastFolders}/[name].js`;
-          //     }
-          //   }
-          //   return `assets/[name].js`;
-          // },
-          entryFileNames: `assets/[name].js`,
+          entryFileNames: (chunkInfo) => {
+            const { facadeModuleId } = chunkInfo;
+            // By default entry files are placed under assets folder, to group them under other folders based on module type, add those folders here
+            const moduleTypes = ['utils'];
+            for (let i = 0; i < moduleTypes.length; i++) {
+              if (facadeModuleId?.includes(moduleTypes[i])) {
+                const moduleType = moduleTypes[i];
+                const [, lastPart] = facadeModuleId.split(moduleTypes[i]);
+                const lastFolders = lastPart.slice(
+                  0,
+                  lastPart.lastIndexOf('/'),
+                );
+                return `${moduleType}${lastFolders}/[name].js`;
+              }
+            }
+            return `assets/[name].js`;
+          },
           chunkFileNames: `assets/[name].js`,
           assetFileNames: `assets/styles/[name].[ext]`,
         },
