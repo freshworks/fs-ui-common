@@ -1,7 +1,7 @@
 {
   "name": "@freshworks/fs-ui-common",
   "description": "Freshservice UI Common library",
-  "version": "0.0.2-build-test",
+  "version": "0.0.2-build-test-1",
   "type": "module",
   "repository": {
     "type": "git",
