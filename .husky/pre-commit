@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
-# . "$(dirname -- "$0")/_/husky.sh"
+. "$(dirname -- "$0")/_/husky.sh"
 
-# . ~/.nvm/nvm.sh && nvm use 22.7.0
+. ~/.nvm/nvm.sh && nvm use 22.7.0
 
-# node src/scripts/optimise-svg $(git diff --diff-filter=d --cached --name-only | grep '.svg$')
+node src/scripts/optimise-svg $(git diff --diff-filter=d --cached --name-only | grep '.svg$')

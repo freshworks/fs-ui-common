@@ -36,10 +36,10 @@ export default () => {
                   0,
                   lastPart.lastIndexOf('/'),
                 );
-                return `${moduleType}${lastFolders}/[name].[format].js`;
+                return `${moduleType}${lastFolders}/[name].js`;
               }
             }
-            return `assets/[name].[format].js`;
+            return `assets/[name].js`;
           },
           chunkFileNames: `assets/[name].js`,
           assetFileNames: `assets/styles/[name].[ext]`,
