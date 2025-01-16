@@ -1,4 +1,4 @@
-name: Publish package to GitHub Packages and deploy to Github pages
+name: Publish package to GitHub Packages
 on:
   # Runs whenever a new release is created
   pull_request:
