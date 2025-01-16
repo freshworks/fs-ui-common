@@ -290,8 +290,8 @@ audio,
 canvas,
 video {
 	display: inline-block;
-	*display: inline;
-	*zoom: 1;
+	display: inline;
+	zoom: 1;
 }
 
 // Prevents modern browsers from displaying 'audio' without controls
@@ -310,6 +310,7 @@ input[type="reset"],
 input[type="submit"] {
 	cursor: pointer; // Cursors on all buttons applied consistently
 	-webkit-appearance: button; // Style clickable inputs in iOS
+	appearance: button; // Standard property for compatibility
 }
 
 input[type="search"]::-webkit-search-decoration,
