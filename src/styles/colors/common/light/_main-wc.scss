@@ -1,0 +1,9 @@
+@import "base";
+@import "alpha";
+@import "components";
+
+:host {
+	@include light-theme-common-base-colors;
+	@include light-theme-common-alpha-colors;
+	@include light-theme-common-components-colors;
+}

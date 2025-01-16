@@ -17,6 +17,7 @@ export default () => {
       rollupOptions: {
         input: {
           "fs-colors": "./src/styles/colors/main.scss",
+          "fs-colors-wc": "./src/styles/colors/main-wc.scss",
           "fs-base-styles": "./src/styles/app-components/main.scss",
           "fs-reset": "./src/styles/base/reset.scss",
         },
