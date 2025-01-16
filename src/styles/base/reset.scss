@@ -1,9 +1,23 @@
-//Html elements level reset and global classes reset are added here
+// Html elements level reset and global classes reset are added here
 @import "./variables";
 
-* {
-	box-sizing: border-box;
-	-webkit-font-smoothing: antialiased;
+@import "./mixins";
+
+/* 
+  html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
+  v1.4 2009-07-27 | Authors: Eric Meyer & Richard Clark
+  html5doctor.com/html-5-reset-stylesheet/
+*/
+
+// Right - To - Left Lang
+// -------------------------
+
+@if $rtl {
+	html,
+	body,
+	.redactor_editor {
+		direction: rtl;
+	}
 }
 
 html,
@@ -59,6 +73,14 @@ fieldset,
 form,
 label,
 legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
 article,
 aside,
 canvas,
@@ -91,39 +113,211 @@ video {
 }
 
 body {
-	font-family: $baseFontFamily;
+	line-height: 1;
+	color: var(--color-text-primary);
+	background: var(--color-fill-surface);
 }
 
-svg {
-	width: 20px;
-	height: 20px;
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+	vertical-align: middle;
 }
 
-input {
-	line-height: 16px;
-	height: 20px;
-	// border: 1px solid #dadfe3;
+caption,
+th,
+td {
+	@include text-align(left);
+	font-weight: normal;
+	vertical-align: middle;
 }
 
-textarea,
-input {
-	outline: none;
+/* tables still need cellspacing="0" in the markup */
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-a {
-	text-decoration: none;
-	cursor: pointer;
+q,
+blockquote {
+	@include reset-quotation;
+}
+a img {
+	border: none;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
 }
 
 ol,
 ul {
+	@include reset-list-style;
+}
+
+nav ul {
 	list-style: none;
 }
 
-.ember-basic-dropdown-trigger {
-	outline: none;
+blockquote,
+q {
+	quotes: none;
 }
 
-p {
-	margin: 0 0 8;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+	content: none;
+}
+
+a {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+ins {
+	background: var(--color-overlay-semantic-warning);
+	color: var(--color-text-primary);
+	text-decoration: none;
+}
+
+mark {
+	background: var(--color-overlay-semantic-warning);
+	color: var(--color-text-primary);
+	font-style: italic;
+	font-weight: bold;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+	border-bottom: 1px dotted;
+	cursor: help;
+}
+
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid var(--color-boundary-border-mildest);
+	margin: 1em 0;
+	padding: 0;
+}
+
+input,
+select {
+	vertical-align: middle;
+}
+
+ol {
+	list-style: decimal outside;
+	@include margin(3px 8px 3px 28px);
+}
+
+strong,
+b {
+	font-weight: bold;
+}
+
+em,
+i {
+	font-style: italic;
+}
+
+@include reset-html5;
+
+/* END RESET CSS */
+
+#tag-list {
+	@include margin(5px -5px 5px 0);
+}
+#tag-list li {
+	display: inline;
+	list-style: none outside none;
+	margin: 0;
+	color: var(--color-text-primary);
+	border-color: var(--color-boundary-border-mildest);
+	border-width: 1px;
+	border-style: solid;
+	@include border-radius(3px);
+	padding: 2px 3px;
+	font-size: 11px;
+	background-color: var(--color-fill-semantic-success-mild);
+}
+#tag-list li a {
+	color: var(--color-text-inverse);
+}
+
+#tag-cloud {
+	@include margin(5px -5px 5px 0);
+}
+#tag-cloud li {
+	display: inline;
+	list-style: none outside none;
+	margin: 0;
+	padding: 0;
+}
+
+#tag-cloud li a:hover {
+	color: var(--color-text-primary);
+}
+
+// Taken from Normalize reset
+
+// Display block in IE6-9 and FF3
+// -------------------------
+
+audio,
+canvas,
+video {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+// Prevents modern browsers from displaying 'audio' without controls
+// -------------------------
+
+audio:not([controls]) {
+	display: none;
+}
+
+// Forms
+// -------------------------
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	cursor: pointer; // Cursors on all buttons applied consistently
+	-webkit-appearance: button; // Style clickable inputs in iOS
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+	-webkit-appearance: none; // Inner-padding issues in Chrome OSX, Safari 5
+}
+
+textarea {
+	overflow: auto; // Remove vertical scrollbar in IE6-9
+	vertical-align: top; // Readability and alignment cross-browser
 }
