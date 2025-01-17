@@ -21,7 +21,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: [fs-frontend]
+    runs-on: [fw-shared-freshworks]
     permissions:
       contents: read
       packages: write
