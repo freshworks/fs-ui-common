@@ -1,0 +1,27 @@
+@import "rtl-mixins";
+
+@mixin reset-quotation {
+  quotes: none;
+}
+
+@mixin reset-list-style {
+  list-style: none;
+}
+
+@mixin reset-html5 {
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  main,
+  menu,
+  nav,
+  section,
+  summary {
+    display: block;
+  }
+}
