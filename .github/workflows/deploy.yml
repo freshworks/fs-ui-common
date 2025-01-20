@@ -1,0 +1,45 @@
+name: Publish package to GitHub Packages
+on:
+  # Runs whenever a new release is created
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+  # Allows you to run this workflow manually from the Actions tab
+  # workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: [fw-shared-freshworks]
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      # Setup .npmrc file to publish to GitHub Packages
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.7.0'
+          registry-url: 'https://npm.pkg.github.com'
+          # Defaults to the user or organization that owns the workflow file
+          scope: '@freshworks'
+      - run: corepack enable
+      - run: pnpm -v
+      - run: pnpm install
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.VINODH_KUMAR_MANICKAM_PAT }}
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.VINODH_KUMAR_MANICKAM_PAT }}
