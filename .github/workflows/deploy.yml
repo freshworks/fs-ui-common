@@ -39,7 +39,7 @@ jobs:
       - run: pnpm -v
       - run: pnpm install
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.VINODH_KUMAR_MANICKAM_PAT }}
+          NODE_AUTH_TOKEN: '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'
       - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.VINODH_KUMAR_MANICKAM_PAT }}
+          NODE_AUTH_TOKEN: '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'
